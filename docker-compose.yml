@@ -1,0 +1,23 @@
+version: '3.18'
+services:
+    server:
+        build: ./server
+ #       volumes:
+ #           - ./:/app
+        ports:
+            - 3000:3000
+        tty: true
+        stdin_open: true
+
+    client:
+        build: ./client
+        environment:
+            - USER=user1
+        depends_on:
+            - server
+        #ports:
+        #    - 3001:3000
+        tty: true
+        stdin_open: true
+        deploy:
+           replicas: 2
