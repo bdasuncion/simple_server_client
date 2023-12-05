@@ -13,7 +13,7 @@ class Client {
     private:
         int getConnectionToServer(const char *peerHost, short peerPort);
         void readFromServer(int socket);
-        int writeToServer(int socket, std::string name);
+        void writeToServer(int socket, std::string name);
     public:
         void startConnection(std::string username, std::string host, std::string port);
 };

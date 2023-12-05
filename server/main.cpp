@@ -62,7 +62,6 @@ void awaitClientConnection(int sockfd) {
 }
 int main() {
     int sockfd;
-    printf("Hello world\n");
     sockfd = socket(AF_INET, SOCK_STREAM, 0);
     int listenport = 3000;
     if (sockfd < 0) {
@@ -89,17 +88,7 @@ int main() {
         exit(1);
     }
 
-    //std::thread awaitClients(awaitClientConnection, (sockfd));
-    //awaitClients.join();
     awaitClientConnection(sockfd);
-    /*int clientSockets[4], clientCount = 0;
-    acceptConnection(sockfd, clientSockets, clientCount);
 
-    write(clientSockets[0], "Hello!!\n", 8);
- 
-    readFromClient(clientSockets[0]);
-
-    close(clientSockets[0]); */
-    std::cout << "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX END\n";
     return 0;
 }

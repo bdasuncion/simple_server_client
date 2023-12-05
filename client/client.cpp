@@ -12,7 +12,7 @@ void Client::startConnection(std::string username, std::string host, std::string
     close(socket);
 } 
 
-int Client::writeToServer(int socket, std::string name) {
+void Client::writeToServer(int socket, std::string name) {
     while(1) {
         std::string input;
         std::getline(std::cin >> std::ws, input);
